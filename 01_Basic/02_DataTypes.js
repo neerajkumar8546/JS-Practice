@@ -22,5 +22,5 @@ let age=25
 //Object
 console.log(typeof names);
 console.log(typeof age);
-console.log(typeof null);
-console.log(typeof undefined)
+console.log(typeof null); //Object
+console.log(typeof undefined)   //Undefined
