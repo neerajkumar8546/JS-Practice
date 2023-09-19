@@ -43,3 +43,31 @@ let My_Object={
 
 console.log(Arrayex)
 console.log(My_Object)
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//stack(Primitive), Heap(Primitive)
+
+let myyoutubename='hiteshchaudhary.com'
+
+let anothername=myyoutubename
+
+anothername='neerajk_Study98'
+
+// console.log(myyoutubename)
+// console.log(anothername)
+
+let userOne={
+    email:"neerajk.ext@innov.in",
+    upi:"neerajk8546@ybl"
+}
+
+let userTwo=userOne
+
+userTwo.email='neerajkumar8546@gmail.com'
+
+// Primitive data type is not changed original value only changed copy value
+// non-primitive data type is changed original value
+
+console.log(userTwo)
+
