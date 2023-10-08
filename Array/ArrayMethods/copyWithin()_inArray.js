@@ -1,5 +1,6 @@
 //The copyWithin() method of Array instances shallow copies part of this array to another location in the same array and returns this array without modifying its length.
 
+//copyWithin() modifies the original array in place and does not create a new array. 
 const array1 = ['a', 'b', 'c', 'd', 'e'];
 
 // Copy to index 0 the element at index 3
