@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    const ClassName=['cl_1','cl_2','cl-_3','cl_4','cl_5']
+    const ID=['ID_1','ID_2','ID-_3','ID_4','ID_5']
+    const title=['title1','title2','title3','title4','title5']
+    const backgroundColor=['red','green','blue','black','orange']
+    const padding=10
+    const text=['Chai Aur Code1','Chai Aur Code2','Chai Aur Code3','Chai Aur Code4','Chai Aur Code5']
+    const color='white'
+
+    for (let index = 0; index < text.length; index++) {
+        
+        CreateNewDiv(ClassName[index],ID[index],title[index],backgroundColor[index],padding[index],text[index],color)
+        
+    }
+
+    
+
+    function CreateNewDiv(className,id,title,backgroundcolor,padding,text,color){
+
+        const div=document.createElement('div')
+        console.log(div);
+        div.className=className
+        div.id=id//Math.round(Math.random()*10+1)
+        div.setAttribute("title",title)
+        div.style.backgroundColor=backgroundcolor
+        div.style.padding=padding
+        div.style.color=color
+        div.style.textAlign='center'
+        const AddText=document.createTextNode(text)
+        div.appendChild(AddText)
+        
+        document.body.appendChild(div)
+    }
+    
+    
+
+
+</script>
+</html>
