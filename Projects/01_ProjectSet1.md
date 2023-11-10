@@ -8,6 +8,40 @@
 
 ## Project 1
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+
+    <script src="index.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label>Height: </label
+      ><input type="text" id="height" /><br /><br />
+      <label>Weight: </label
+      ><input type="text" id="weight" /><br /><br />
+      <button class="submit" id="submit">Calculate</button>
+    </form>
+
+    <p class="result"></p>
+    <div class="guide">
+      <ol>
+        <li>Under Weight: Less than 18.6</li>
+        <li>Normal Weight:18.6 to 24.9</li>
+        <li>Over Weight: Greater than 24.9</li>
+      </ul>
+    </div>
+  </body>
+  <script></script>
+</html>
+
+
+
 ```javascript
 
 const button = document.querySelectorAll('.button');
