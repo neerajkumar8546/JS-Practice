@@ -43,3 +43,9 @@ button.forEach(
 );
 
 ```
+
+
+## Project 2 BMI Calculator
+
+```javascript
+```
