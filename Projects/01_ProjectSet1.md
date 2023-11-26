@@ -148,3 +148,130 @@ setInterval(function () {
 }, 1000);
 
 ```
+
+
+### Project 4 Guess The Number
+
+```javascript
+
+let randomNumber = parseInt(Math.random() * 100 + 1);
+
+const GuessInput=document.querySelector('#guessField');
+const submit=document.querySelector('#subt');
+const Previous_Guesses=document.querySelector('.guesses');
+const Remaining_Guess=document.querySelector('.lastResult');
+const lowOrHiMessage=document.querySelector('.lowOrHi');
+const result=document.querySelector('.resultParas');
+
+const p=document.createElement('p');
+
+let StorepreviousGuess=[];
+let numberOfAttempts=1;
+
+let PlayGame=true;
+
+if(PlayGame)
+{
+    submit.addEventListener('click',function(e){
+        e.preventDefault();
+        const guess=parseInt(GuessInput.value)
+        console.log(guess);
+        validateGuess(guess);
+    })
+
+}
+
+function validateGuess(guess) {
+    if(isNaN(guess))
+    {
+        alert('Please enter a valid number')
+    }
+    else if(guess>100)
+    {
+        alert('Please enter a number less then 100');
+    }
+    else if(guess<1)
+    {
+        alert('Please enter a number greater then 0');
+    }
+    else{
+        StorepreviousGuess.push(guess);
+        
+        if(StorepreviousGuess.length<=10)
+        {
+            displayGuess(guess);
+            checkGuess(guess);
+            if(StorepreviousGuess.length==10)
+            {
+                displayMessage(`Game Over. Random number was ${randomNumber}`);
+                endGame();
+            }
+        }
+        
+    }
+}
+
+function checkGuess(guess) {
+    if(guess===randomNumber)
+    {
+        displayMessage('You guessed it right');
+        endGame();
+    }
+    else if(guess<randomNumber)
+    {
+        displayMessage('You guessed is to low');
+    }
+    else if(guess>randomNumber)
+    {
+        displayMessage('You guessed is to High');
+    }
+}
+
+
+function displayGuess(guess) {
+    GuessInput.value='';
+    Previous_Guesses.innerHTML+=`${guess} &nbsp; `;
+    Remaining_Guess.innerHTML=`${10-numberOfAttempts}`
+    numberOfAttempts++;
+    
+
+}
+
+function displayMessage(message) {
+    lowOrHiMessage.innerHTML=`<h2>${message}</h2>`;
+    if(message="You guessed it right")
+    {
+        lowOrHiMessage.setAttribute('color','green')
+    }
+    else{
+        lowOrHiMessage.setAttribute('color','black')
+    }
+    
+}
+
+function endGame() {
+    GuessInput.value='';
+    GuessInput.setAttribute('disabled','');
+    p.classList.add('button');
+    p.innerHTML=`<h2 id="NewGame">Start New Game</h2>`
+    result.appendChild(p);
+    PlayGame=false;
+    newGame();
+}
+
+function newGame() {
+    const startNewGame=document.querySelector('#NewGame');
+    startNewGame.addEventListener('click',function(){
+        GuessInput.value='';
+        randomNumber = parseInt(Math.random() * 100 + 1);
+        StorepreviousGuess=[];
+        numberOfAttempts=1;
+        Previous_Guesses.innerHTML='';
+        Remaining_Guess.innerHTML=`${11-numberOfAttempts}`;
+        GuessInput.removeAttribute('disabled');
+        result.removeChild(p);
+
+        PlayGame=true;
+    })
+}
+```
